@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Chino y el Turco - Menú</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 25px 25px;
+            color: #e0e0e0;
+            padding: 15px 8px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-top: 5px;
+        }
+        header h1 {
+            font-size: 1.5rem;
+            color: #f39c12;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        
+        .carta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        section {
+            background-color: rgba(20, 20, 20, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 0;
+        }
+
+        .full-width {
+            grid-column: span 2;
+            margin-top: 10px;
+        }
+
+        .categoria-titulo {
+            font-size: 0.9rem;
+            color: #f39c12;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .sub-categoria-titulo {
+            font-size: 0.75rem;
+            color: #e67e22;
+            font-weight: 600;
+            margin-top: 8px;
+            margin-bottom: 4px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+            padding-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sub-precios {
+            font-size: 0.6rem;
+            color: #2ecc71;
+            font-weight: 400;
+            text-transform: none;
+            margin-top: 2px;
+        }
+
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 0.75rem;
+            padding: 4px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.03);
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .item-info {
+            max-width: 75%;
+        }
+        .item-nombre {
+            color: #fff;
+            font-weight: 500;
+            display: block;
+        }
+        .item-desc {
+            color: #999;
+            font-size: 0.65rem;
+            font-weight: 300;
+            margin-top: 1px;
+        }
+        .item-precio {
+            color: #2ecc71;
+            font-weight: 600;
+            align-self: center;
+        }
+
+        .gusto-item {
+            font-size: 0.75rem;
+            color: #ccc;
+            font-weight: 300;
+            padding: 3px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>El Chino y el Turco</h1>
+        </header>
+
+        <div class="carta-grid">
+            
+            <!-- Columna Izquierda: Empanadas -->
+            <section>
+                <h2 class="categoria-titulo">
+                    <span>{{ empanadas.titulo }}</span>
+                    <span class="sub-precios">{{ empanadas.precios_texto }}</span>
+                </h2>
+                <div>
+                    {% for gusto in empanadas.gustos %}
+                    <div class="gusto-item">{{ gusto }}</div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Columna Derecha: Tartas -->
+            <section>
+                <h2 class="categoria-titulo">
+                    <span>{{ tartas.titulo }}</span>
+                    <span class="sub-precios">{{ tartas.precios_texto }}</span>
+                </h2>
+                <div>
+                    {% for gusto in tartas.gustos %}
+                    <div class="gusto-item">{{ gusto }}</div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Sección Pizzas -->
+            {% for categoria, items in menu.items() %}
+            <section class="full-width">
+                <h2 class="categoria-titulo">
+                    <span>{{ categoria }}</span>
+                </h2>
+                <div class="menu-list">
+                    {% for item in items %}
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-nombre">{{ item.nombre }}</span>
+                            {% if item.descripcion %}
+                            <span class="item-desc">{{ item.descripcion }}</span>
+                            {% endif %}
+                        </div>
+                        <span class="item-precio">${{ "{:,}".format(item.precio).replace(',', '.') }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endfor %}
+
+            <!-- Sección Hamburguesas -->
+            <section class="full-width">
+                <h2 class="categoria-titulo">
+                    <span>{{ hamburguesas.titulo }}</span>
+                </h2>
+                <div class="menu-list">
+                    {% for item in hamburguesas.lista %}
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-nombre">{{ item.nombre }}</span>
+                            <span class="item-desc">{{ item.descripcion }}</span>
+                        </div>
+                        <span class="item-precio">${{ "{:,}".format(item.precio).replace(',', '.') }}</span>
+                    </div>
+                    {% endfor %}
+
+                    <div class="sub-categoria-titulo">{{ hamburguesas.titulo_carne }}</div>
+                    
+                    {% for item in hamburguesas.lista_carne %}
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-nombre">{{ item.nombre }}</span>
+                            <span class="item-desc">{{ item.descripcion }}</span>
+                        </div>
+                        <span class="item-precio">${{ "{:,}".format(item.precio).replace(',', '.') }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Sección Platos -->
+            <section class="full-width">
+                <h2 class="categoria-titulo">
+                    <span>{{ platos.titulo }}</span>
+                </h2>
+                <div class="menu-list">
+                    {% for item in platos.lista %}
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-nombre">{{ item.nombre }}</span>
+                        </div>
+                        <span class="item-precio">${{ "{:,}".format(item.precio).replace(',', '.') }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Sección Pastas -->
+            <section class="full-width">
+                <h2 class="categoria-titulo">
+                    <span>{{ pastas.titulo }}</span>
+                </h2>
+                <div class="menu-list">
+                    {% for item in pastas.lista %}
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-nombre">{{ item.nombre }}</span>
+                            {% if item.descripcion %}
+                            <span class="item-desc">{{ item.descripcion }}</span>
+                            {% endif %}
+                        </div>
+                        <span class="item-precio">${{ "{:,}".format(item.precio).replace(',', '.') }}</span>
+                    </div>
+                    {% endfor %}
+
+                    <div class="sub-categoria-titulo">{{ pastas.titulo_salsas }}</div>
+                    {% for salsa in pastas.lista_salsas %}
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-nombre">{{ salsa.nombre }}</span>
+                        </div>
+                        <span class="item-precio">
+                            {% if salsa.texto_precio %}
+                                {{ salsa.texto_precio }}
+                            {% else %}
+                                ${{ "{:,}".format(salsa.precio).replace(',', '.') }}
+                            {% endif %}
+                        </span>
+                    </div>
+                    {% endfor %}
+
+                    <div class="sub-categoria-titulo">{{ pastas.titulo_estofados }}</div>
+                    {% for estofado in pastas.lista_estofados %}
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-nombre">{{ estofado.nombre }}</span>
+                        </div>
+                        <span class="item-precio">${{ "{:,}".format(estofado.precio).replace(',', '.') }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Sección Bebidas -->
+            <section class="full-width">
+                <h2 class="categoria-titulo">
+                    <span>{{ bebidas.titulo }}</span>
+                </h2>
+                <div class="menu-list">
+                    <!-- Gaseosas / Aguas / Sodas -->
+                    {% for grupo in bebidas.gaseosas %}
+                    <div class="sub-categoria-titulo">{{ grupo.nombre }}</div>
+                    {% for item in grupo.tamanos %}
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-nombre">{{ item.tamano }}</span>
+                        </div>
+                        <span class="item-precio">${{ "{:,}".format(item.precio).replace(',', '.') }}</span>
+                    </div>
+                    {% endfor %}
+                    {% endfor %}
+
+                    <!-- Vinos -->
+                    <div class="sub-categoria-titulo">Vinos</div>
+                    {% for vino in bebidas.vinos %}
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-nombre">{{ vino.nombre }}</span>
+                        </div>
+                        <span class="item-precio">${{ "{:,}".format(vino.precio).replace(',', '.') }}</span>
+                    </div>
+                    {% endfor %}
+
+                    <!-- Cervezas -->
+                    <div class="sub-categoria-titulo">Cervezas</div>
+                    {% for cerveza in bebidas.cervezas %}
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <span class="item-nombre">{{ cerveza.nombre }}</span>
+                        </div>
+                        <span class="item-precio">${{ "{:,}".format(cerveza.precio).replace(',', '.') }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <footer>
+                <p>&copy; 2026 El Chino y el Turco</p>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>
