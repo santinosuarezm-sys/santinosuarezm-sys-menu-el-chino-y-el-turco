@@ -7,42 +7,42 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212; /* Fondo negro */
-            color: #e0e0e0; /* Texto claro */
+            background-color: #fdfbf7; /* Fondo beige */
+            color: #1a1a1a; /* Texto negro */
             margin: 0;
             padding: 15px;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: #1e1e1e; /* Tarjeta oscura */
+            background: #ffffff; /* Tarjeta blanca sobre fondo beige */
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         h1 {
             text-align: center;
-            color: #e67e22; /* Título naranja */
+            color: #d35400; /* Título naranja */
             margin-bottom: 5px;
         }
         .subtitulo {
             text-align: center;
-            color: #aaa;
+            color: #666;
             margin-bottom: 25px;
         }
         h2 {
             border-bottom: 2px solid #e67e22; /* Línea naranja */
             padding-bottom: 5px;
             margin-top: 25px;
-            color: #e67e22;
+            color: #d35400;
             font-size: 1.2em;
         }
         h3.subseccion {
-            color: #f39c12;
+            color: #d35400;
             font-size: 1.05em;
             margin-top: 20px;
             margin-bottom: 10px;
-            border-bottom: 1px dashed #444;
+            border-bottom: 1px dashed #ccc;
             padding-bottom: 3px;
         }
         /* Contenedor para poner dos secciones al lado */
@@ -54,16 +54,16 @@
         }
         .columna {
             flex: 1;
-            background: #252525;
+            background: #f7f4ed;
             padding: 12px;
             border-radius: 6px;
-            border: 1px solid #333;
+            border: 1px solid #e2ded6;
         }
         .columna h3 {
-            color: #e67e22;
+            color: #d35400;
             font-size: 1em;
             margin-top: 0;
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid #dcd6cd;
             padding-bottom: 5px;
             text-align: center;
         }
@@ -73,15 +73,15 @@
         }
         .item-columna .nombre {
             font-weight: bold;
-            color: #fff;
+            color: #2c3e50;
         }
         .item-columna .precio {
-            color: #e67e22;
+            color: #d35400;
             font-weight: bold;
         }
         .sabores {
             font-size: 0.75em;
-            color: #aaa;
+            color: #666;
             margin-top: 2px;
             margin-bottom: 8px;
         }
@@ -90,7 +90,7 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 12px;
-            border-bottom: 1px dashed #333;
+            border-bottom: 1px dashed #e2ded6;
             padding-bottom: 8px;
         }
         .info {
@@ -100,23 +100,23 @@
         .nombre {
             font-weight: bold;
             font-size: 1em;
-            color: #ffffff;
+            color: #2c3e50;
         }
         .descripcion {
             font-size: 0.85em;
-            color: #aaa;
+            color: #555;
             margin-top: 2px;
         }
         .precio {
             font-weight: bold;
-            color: #e67e22;
+            color: #d35400;
             font-size: 1em;
             white-space: nowrap;
         }
         .nota {
             text-align: center;
             font-style: italic;
-            color: #ffb142;
+            color: #c0392b;
             margin-top: 8px;
             margin-bottom: 15px;
             font-size: 0.9em;
@@ -129,7 +129,7 @@
         <h1>El Chino y el Turco</h1>
         <div class="subtitulo">¡Nuestra Carta Online!</div>
 
-        <!-- SECCIÓN 1: PANCHOS -->
+        <!-- SECCIÓN 1: PANCHOS Y CONO DE PAPAS -->
         <h2>🌭 Panchos</h2>
         <div class="item">
             <div class="info">
@@ -143,6 +143,12 @@
                 <div class="descripcion">Varias salsas</div>
             </div>
             <div class="precio">$1500</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Cono de papas</div>
+            </div>
+            <div class="precio">$3000</div>
         </div>
 
         <!-- SECCIÓN 2: EMPANADAS Y TARTAS EN PARALELO -->
@@ -211,7 +217,7 @@
         </div>
 
         <!-- SECCIÓN 4: TORTILLAS -->
-        <h2>🥔 Tortillas</h2>
+        <h2>Tortillas</h2>
         <div class="item">
             <div class="info">
                 <div class="nombre">Individual</div>
@@ -245,7 +251,7 @@
         </div>
 
         <!-- Subsección 100% Carne -->
-        <h3 class="subseccion">🥩 100% Carne</h3>
+        <h3 class="subseccion">100% Carne</h3>
         <div class="item">
             <div class="info">
                 <div class="nombre">Simple</div>
@@ -364,7 +370,7 @@
             <div class="precio">$12000</div>
         </div>
 
-        <h3 class="subseccion">🍅 Salsas y Estofados (para tus pastas)</h3>
+        <h3 class="subseccion">Salsas y Estofados (para tus pastas)</h3>
         <div class="item">
             <div class="info">
                 <div class="nombre">Roja</div>
@@ -404,6 +410,117 @@
         <div class="item">
             <div class="info">
                 <div class="nombre">Estofado de carne</div>
+            </div>
+            <div class="precio">$5000</div>
+        </div>
+
+        <!-- SECCIÓN 9: BEBIDAS -->
+        <h2>🥤 Bebidas</h2>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Línea Coca - Lata</div>
+            </div>
+            <div class="precio">$2000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Línea Coca - 600ml</div>
+            </div>
+            <div class="precio">$2500</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Línea Coca - 1,75L</div>
+            </div>
+            <div class="precio">$5000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Pepsi - Lata</div>
+            </div>
+            <div class="precio">$1500</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Pepsi - 500ml</div>
+            </div>
+            <div class="precio">$1200</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Manaos - 600ml</div>
+            </div>
+            <div class="precio">$1500</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Manaos - 2,25L</div>
+            </div>
+            <div class="precio">$3000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Placer - 500ml</div>
+            </div>
+            <div class="precio">$1000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Placer - 1,5L</div>
+            </div>
+            <div class="precio">$2000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Levite - 1,5L</div>
+            </div>
+            <div class="precio">$2500</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Agua - 600ml</div>
+            </div>
+            <div class="precio">$1000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Agua - 2L</div>
+            </div>
+            <div class="precio">$1500</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Soda - 2L</div>
+            </div>
+            <div class="precio">$2500</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Vino Don Valentín</div>
+            </div>
+            <div class="precio">$5000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Cerveza Lata - Isenbeck</div>
+            </div>
+            <div class="precio">$2500</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Cerveza Lata - Brahma</div>
+            </div>
+            <div class="precio">$6000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Cerveza Lata - Quilmes</div>
+            </div>
+            <div class="precio">$6000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Cerveza Lata - Palermo</div>
             </div>
             <div class="precio">$5000</div>
         </div>
