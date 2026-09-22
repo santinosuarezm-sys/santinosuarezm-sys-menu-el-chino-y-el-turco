@@ -7,34 +7,34 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #121212; /* Fondo negro */
+            color: #e0e0e0; /* Texto claro para que se lea bien */
             margin: 0;
             padding: 20px;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: #fff;
+            background: #1e1e1e; /* Tarjeta oscura para el menú */
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
         h1 {
             text-align: center;
-            color: #e67e22;
+            color: #e67e22; /* Título naranja */
         }
         h2 {
-            border-bottom: 2px solid #e67e22;
+            border-bottom: 2px solid #e67e22; /* Línea naranja que te gusta */
             padding-bottom: 5px;
             margin-top: 30px;
-            color: #2c3e50;
+            color: #e67e22;
         }
         .item {
             display: flex;
             justify-content: space-between;
             margin-bottom: 15px;
-            border-bottom: 1px dashed #ddd;
+            border-bottom: 1px dashed #333;
             padding-bottom: 10px;
         }
         .info {
@@ -44,22 +44,23 @@
         .nombre {
             font-weight: bold;
             font-size: 1.1em;
+            color: #ffffff;
         }
         .descripcion {
             font-size: 0.9em;
-            color: #666;
+            color: #aaa;
             margin-top: 3px;
         }
         .precio {
             font-weight: bold;
-            color: #e67e22;
+            color: #e67e22; /* Precios en naranja */
             font-size: 1.1em;
             white-space: nowrap;
         }
         .nota {
             text-align: center;
             font-style: italic;
-            color: #555;
+            color: #ffb142;
             margin-top: 10px;
             margin-bottom: 20px;
             font-size: 0.95em;
@@ -70,7 +71,7 @@
 
     <div class="container">
         <h1>El Chino y el Turco</h1>
-        <p style="text-align: center; color: #777;">¡Nuestra Carta Online!</p>
+        <p style="text-align: center; color: #aaa;">¡Nuestra Carta Online!</p>
 
         <!-- SECCIÓN PANCHOS -->
         <h2>Panchos</h2>
@@ -90,8 +91,6 @@
 
         <!-- SECCIÓN HAMBURGUESAS -->
         <h2>Hamburguesas</h2>
-        
-        <!-- Reemplaza o ajusta aquí tus hamburguesas actuales si ya tenías algunas cargadas -->
         <div class="item">
             <div class="info">
                 <div class="nombre">Hamburguesa Clásica</div>
@@ -106,7 +105,6 @@
             </div>
             <div class="precio">$5500</div>
         </div>
-
         <div class="nota">🍟 ¡Agregale fritas a tu hamburguesa por $2000 más!</div>
 
         <!-- SECCIÓN SÁNDWICHES -->
@@ -131,6 +129,40 @@
                 <div class="descripcion">Lechuga, tomate, jamón, queso y huevo</div>
             </div>
             <div class="precio">$8000</div>
+        </div>
+
+        <!-- SECCIÓN PIZZAS -->
+        <h2>Pizzas</h2>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Muzza</div>
+                <div class="descripcion">Salsa, mozzarella y orégano</div>
+            </div>
+            <div class="precio">$8000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Especial</div>
+                <div class="descripcion">Muzza, jamón, morrones y aceitunas</div>
+            </div>
+            <div class="precio">$9500</div>
+        </div>
+
+        <!-- SECCIÓN EMPANADAS -->
+        <h2>Empanadas</h2>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Unidad de Empanada</div>
+                <div class="descripcion">Carne, Pollo, Jamón y Queso (Consultar gustos)</div>
+            </div>
+            <div class="precio">$1000</div>
+        </div>
+        <div class="item">
+            <div class="info">
+                <div class="nombre">Docena de Empanadas</div>
+                <div class="descripcion">Surtidas a elección</div>
+            </div>
+            <div class="precio">$11000</div>
         </div>
 
     </div>
