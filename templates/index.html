@@ -8,14 +8,14 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #121212; /* Fondo negro */
-            color: #e0e0e0; /* Texto claro para que se lea bien */
+            color: #e0e0e0; /* Texto claro */
             margin: 0;
-            padding: 20px;
+            padding: 15px;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: #1e1e1e; /* Tarjeta oscura para el menú */
+            background: #1e1e1e; /* Tarjeta oscura */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
@@ -23,47 +23,94 @@
         h1 {
             text-align: center;
             color: #e67e22; /* Título naranja */
+            margin-bottom: 5px;
+        }
+        .subtitulo {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 25px;
         }
         h2 {
-            border-bottom: 2px solid #e67e22; /* Línea naranja que te gusta */
+            border-bottom: 2px solid #e67e22; /* Línea naranja */
             padding-bottom: 5px;
-            margin-top: 30px;
+            margin-top: 25px;
             color: #e67e22;
+            font-size: 1.2em;
         }
+        /* Contenedor para poner dos secciones al lado */
+        .dos-columnas {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .columna {
+            flex: 1;
+            background: #252525;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #333;
+        }
+        .columna h3 {
+            color: #e67e22;
+            font-size: 1em;
+            margin-top: 0;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        .item-columna {
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        .item-columna .nombre {
+            font-weight: bold;
+            color: #fff;
+        }
+        .item-columna .precio {
+            color: #e67e22;
+            font-weight: bold;
+        }
+        .sabores {
+            font-size: 0.75em;
+            color: #aaa;
+            margin-top: 2px;
+            margin-bottom: 8px;
+        }
+        /* Estilos normales para el resto */
         .item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border-bottom: 1px dashed #333;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
         .info {
             flex-grow: 1;
-            padding-right: 15px;
+            padding-right: 10px;
         }
         .nombre {
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1em;
             color: #ffffff;
         }
         .descripcion {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #aaa;
-            margin-top: 3px;
+            margin-top: 2px;
         }
         .precio {
             font-weight: bold;
-            color: #e67e22; /* Precios en naranja */
-            font-size: 1.1em;
+            color: #e67e22;
+            font-size: 1em;
             white-space: nowrap;
         }
         .nota {
             text-align: center;
             font-style: italic;
             color: #ffb142;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            font-size: 0.95em;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -71,7 +118,34 @@
 
     <div class="container">
         <h1>El Chino y el Turco</h1>
-        <p style="text-align: center; color: #aaa;">¡Nuestra Carta Online!</p>
+        <div class="subtitulo">¡Nuestra Carta Online!</div>
+
+        <!-- SECCIÓN SUPERIOR: EMPANADAS Y TARTAS (LADO A LADO) -->
+        <div class="dos-columnas">
+            <!-- Columna Empanadas -->
+            <div class="columna">
+                <h3>Empanadas</h3>
+                <div class="item-columna">
+                    <span class="nombre">Unidad:</span> <span class="precio">$1500</span>
+                </div>
+                <div class="item-columna">
+                    <span class="nombre">Docena:</span> <span class="precio">$20000</span>
+                </div>
+                <div class="sabores">Gustos: Carne, Carne picante, Pollo, Jamón y Queso, Verdura.</div>
+            </div>
+
+            <!-- Columna Tartas -->
+            <div class="columna">
+                <h3>Tartas</h3>
+                <div class="item-columna">
+                    <span class="nombre">Porción:</span> <span class="precio">$4500</span>
+                </div>
+                <div class="item-columna">
+                    <span class="nombre">Completa:</span> <span class="precio">$16000</span>
+                </div>
+                <div class="sabores">Gustos: Jamón y Queso, Verdura.</div>
+            </div>
+        </div>
 
         <!-- SECCIÓN PANCHOS -->
         <h2>Panchos</h2>
@@ -129,40 +203,6 @@
                 <div class="descripcion">Lechuga, tomate, jamón, queso y huevo</div>
             </div>
             <div class="precio">$8000</div>
-        </div>
-
-        <!-- SECCIÓN PIZZAS -->
-        <h2>Pizzas</h2>
-        <div class="item">
-            <div class="info">
-                <div class="nombre">Muzza</div>
-                <div class="descripcion">Salsa, mozzarella y orégano</div>
-            </div>
-            <div class="precio">$8000</div>
-        </div>
-        <div class="item">
-            <div class="info">
-                <div class="nombre">Especial</div>
-                <div class="descripcion">Muzza, jamón, morrones y aceitunas</div>
-            </div>
-            <div class="precio">$9500</div>
-        </div>
-
-        <!-- SECCIÓN EMPANADAS -->
-        <h2>Empanadas</h2>
-        <div class="item">
-            <div class="info">
-                <div class="nombre">Unidad de Empanada</div>
-                <div class="descripcion">Carne, Pollo, Jamón y Queso (Consultar gustos)</div>
-            </div>
-            <div class="precio">$1000</div>
-        </div>
-        <div class="item">
-            <div class="info">
-                <div class="nombre">Docena de Empanadas</div>
-                <div class="descripcion">Surtidas a elección</div>
-            </div>
-            <div class="precio">$11000</div>
         </div>
 
     </div>
