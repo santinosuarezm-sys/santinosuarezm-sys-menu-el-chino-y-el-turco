@@ -47,45 +47,41 @@
             border-bottom: 1px dashed #dcd6cd;
             padding-bottom: 3px;
         }
-        /* Contenedor para poner dos secciones al lado */
-        .dos-columnas {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-        .columna {
-            flex: 1;
+        /* Estilos para las tarjetas verticales */
+        .seccion-vertical {
             background: #f3efe6;
             padding: 12px;
             border-radius: 6px;
             border: 1px solid #e2ded6;
+            margin-bottom: 15px;
         }
-        .columna h3 {
+        .seccion-vertical h3 {
             color: #d35400;
-            font-size: 1em;
+            font-size: 1.1em;
             margin-top: 0;
             border-bottom: 1px solid #dcd6cd;
             padding-bottom: 5px;
-            text-align: center;
+            text-align: left;
         }
-        .item-columna {
+        .item-vertical {
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 8px;
-            font-size: 0.9em;
+            font-size: 0.95em;
         }
-        .item-columna .nombre {
+        .item-vertical .nombre {
             font-weight: bold;
             color: #2c3e50;
         }
-        .item-columna .precio {
+        .item-vertical .precio {
             color: #d35400;
             font-weight: bold;
         }
         .sabores {
-            font-size: 0.75em;
+            font-size: 0.8em;
             color: #666;
-            margin-top: 2px;
-            margin-bottom: 8px;
+            margin-top: 4px;
+            margin-bottom: 4px;
         }
         /* Estilos normales para el resto */
         .item {
@@ -138,6 +134,7 @@
                 <div class="nombre">Panchos c/ papas pay</div>
             </div>
             <div class="precio">$1000</div>
+        </div>
 
         <!-- CONO DE PAPAS -->
         <h2>Cono de papas</h2>
@@ -148,31 +145,29 @@
             <div class="precio">$3000</div>
         </div>
 
-        <!-- SECCIÓN 2: EMPANADAS Y TARTAS EN PARALELO -->
-        <div class="dos-columnas">
-            <!-- Columna Empanadas -->
-            <div class="columna">
-                <h3>🥟 Empanadas</h3>
-                <div class="item-columna">
-                    <span class="nombre">Unidad:</span> <span class="precio">$1500</span>
-                </div>
-                <div class="item-columna">
-                    <span class="nombre">Docena:</span> <span class="precio">$15000</span>
-                </div>
-                <div class="sabores">Gustos: Carne, Carne picante, Pollo, Jamón y Queso, Verdura.</div>
+        <!-- SECCIÓN 2: EMPANADAS Y TARTAS (EN VERTICAL) -->
+        <h2>🥟 Empanadas y Tartas</h2>
+        
+        <div class="seccion-vertical">
+            <h3>Empanadas</h3>
+            <div class="item-vertical">
+                <span class="nombre">Unidad</span> <span class="precio">$1500</span>
             </div>
+            <div class="item-vertical">
+                <span class="nombre">Docena</span> <span class="precio">$15000</span>
+            </div>
+            <div class="sabores">Gustos: Carne, Carne picante, Pollo, Jamón y Queso, Verdura.</div>
+        </div>
 
-            <!-- Columna Tartas -->
-            <div class="columna">
-                <h3>🥧 Tartas</h3>
-                <div class="item-columna">
-                    <span class="nombre">Porción:</span> <span class="precio">$4500</span>
-                </div>
-                <div class="item-columna">
-                    <span class="nombre">Completa:</span> <span class="precio">$20000</span>
-                </div>
-                <div class="sabores">Gustos: Jamón y Queso, Verdura.</div>
+        <div class="seccion-vertical">
+            <h3>Tartas</h3>
+            <div class="item-vertical">
+                <span class="nombre">Porción</span> <span class="precio">$4500</span>
             </div>
+            <div class="item-vertical">
+                <span class="nombre">Completa</span> <span class="precio">$20000</span>
+            </div>
+            <div class="sabores">Gustos: Jamón y Queso, Verdura.</div>
         </div>
 
         <!-- SECCIÓN 3: PIZZAS -->
@@ -294,7 +289,7 @@
             <div class="precio">$8000</div>
         </div>
 
-       <div class="nota">🍟 ¡Agregale fritas a tu hamburguesa por $3000 más!</div>
+       <div class="nota">🍟 ¡Agregale fritas a tu sándwich por $3000 más!</div>
 
         <!-- SECCIÓN 7: PLATOS -->
         <h2>🍽️ Platos Principales</h2>
@@ -411,7 +406,7 @@
             <div class="info"><div class="nombre">1,75L</div></div>
             <div class="precio">$5000</div>
         </div>
-            <div class="item">
+        <div class="item">
             <div class="info"><div class="nombre">2,25L</div></div>
             <div class="precio">$0</div>
         </div>
@@ -425,14 +420,14 @@
             <div class="info"><div class="nombre">500ml</div></div>
             <div class="precio">$2000</div>
         </div>
-            <div class="item">
+        <div class="item">
             <div class="info"><div class="nombre">2L</div></div>
             <div class="precio">$4000</div>
-            </div>
-            <div class="item">
+        </div>
+        <div class="item">
             <div class="info"><div class="nombre">2,25L</div></div>
             <div class="precio">$5000</div>
-            </div>
+        </div>
 
         <h3 class="subseccion">Manaos</h3>
         <div class="item">
